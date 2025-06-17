@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Search on",
+  "version": "1.0",
+  "description": "Easy way to search in the browser",
+  "icons": {
+    "16": "icon/16.png",
+    "32": "icon/32.png",
+    "48": "icon/48.png",
+    "96": "icon/96.png",
+    "128": "icon/128.png"
+  },
+  "browser_action": {
+    "default_popup": "src/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": [
+      "src/background.ts"
+    ],
+    "persistent": false,
+    "type": "module"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+G"
+      }
+    }
+  },
+  "permissions": [
+    "search",
+    "storage",
+    "tabs"
+  ]
+}

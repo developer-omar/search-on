@@ -1,0 +1,8 @@
+{
+  "printWidth": 80,
+  "useTabs": false,
+  "vueIndentScriptAndStyle": false,
+  "bracketSameLine": false,
+  "singleAttributePerLine": false,
+  "semi": true
+}
