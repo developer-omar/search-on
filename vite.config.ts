@@ -18,6 +18,9 @@ const target = process.env.TARGET || "firefox";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    sourcemap: false
+  },
   plugins: [
     vue(),
     Vuetify({ autoImport: true }),

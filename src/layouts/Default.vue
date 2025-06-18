@@ -9,7 +9,9 @@ const { t } = useLocale();
 
 <template>
   <v-layout class="rounded rounded-md border">
-    <v-navigation-drawer>
+    <v-navigation-drawer
+      permanent
+    >
       <v-list nav>
         <v-list-item
           link
