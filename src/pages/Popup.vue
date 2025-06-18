@@ -46,11 +46,6 @@ const openOptionsPage = () => {
 <template>
   <div>
     <v-container>
-      <v-row>
-        <v-col cols="12">
-          Options Donate
-        </v-col>
-      </v-row>
       <v-row no-gutters>
         <v-col cols="11">
           <v-form @submit="search">
