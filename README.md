@@ -13,10 +13,14 @@ of backers. If you'd like to join them, please consider contributing with
 
 Search On is a browser extension which enables you to search for information in an easy way, 
 It is similar to a feature in the Vivaldi browser, where you can add search engines and set your 
-favorite nicknames for easy access.
+favorite nicknames for easy access. When writing a nickname in the popup, use the shortcut  <Ctrl + Space> 
+to change the search engine.
 
-## Technologies
+## Development technologies
 
+- A Linux Distribution
+- Node version manager with NodeJS v20.17.0 
+- pnpm as the package manager
 - [Vite Plugin Web Extension](https://vite-plugin-web-extension.aklinker1.io)
 - Vuejs 3
 - Vue Router 4
@@ -26,5 +30,12 @@ favorite nicknames for easy access.
 
 You can use the following commands:
 
+- `pnpm install` to install dependencies.
 - `pnpm dev`  to open a browser and install the extension in development mode.
-- `pnpm build` to bundle your extension for production.
+
+## License
+
+Copyright (c) Omar Quispe
+
+This software is released under the terms of the GNU General Public License v3.0.
+See the LICENSE file for further information.
