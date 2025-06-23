@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Search on",
-  "version": "1.0",
-  "description": "Easy way to search in the browser",
+  "version": "1.0.1",
+  "description": "An easy way to search in the browser",
   "icons": {
     "16": "icon/16.png",
     "32": "icon/32.png",

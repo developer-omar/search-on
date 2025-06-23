@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue";
+import { onActivated, onMounted, onUnmounted, onUpdated, ref, useTemplateRef, watch } from "vue";
 import browser, { runtime } from "webextension-polyfill";
 
 import { usePopup } from "../composables/usePopup";
@@ -41,6 +41,13 @@ const openOptionsPage = () => {
   window.close();
 };
 
+const input = useTemplateRef("searchField");
+onMounted(() => {
+  setTimeout(() =>{
+    input.value?.focus();
+  }, 200);
+})
+
 </script>
 
 <template>
@@ -64,7 +71,7 @@ const openOptionsPage = () => {
               @click:append-inner="search"
               @keydown.ctrl.space="changeSearchEngine"
               autocomplete="off"
-              :autofocus="true"
+              ref="searchField"
             >
             </v-text-field>
           </v-form>

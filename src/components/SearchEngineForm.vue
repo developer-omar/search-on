@@ -8,7 +8,7 @@ defineProps<{
 }>();
 const emit = defineEmits(["saveData"])
 
-const { valid, nameRules, nicknameRules, urlRules } = useFormValidation();
+const { valid, nameRules, getNicknameRules, urlRules } = useFormValidation();
 const { t } = useLocale();
 
 const handleSubmit = () => {
@@ -19,7 +19,7 @@ const handleSubmit = () => {
 <template>
   <v-form 
     @submit.prevent.once="handleSubmit" 
-    validate-on="invalid-input lazy"
+    validate-on="invalid-input eager"
     v-model="valid"
   >
     <v-alert 
@@ -54,7 +54,7 @@ const handleSubmit = () => {
     <v-text-field
       variant="outlined"
       clearable
-      :rules="nicknameRules"
+      :rules="getNicknameRules(searchEngine)"
       v-model="searchEngine.nickname"
       :label="t('$vuetify.optionsPage.searchEnginesSection.form.nickname')"
       :hint="t('$vuetify.optionsPage.searchEnginesSection.form.nicknameHint')"

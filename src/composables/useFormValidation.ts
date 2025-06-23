@@ -1,6 +1,7 @@
 import {  onMounted, ref } from "vue";
 import { useLocale } from "vuetify/lib/framework.mjs";
 import { useSearchEngineList } from "./useSearchEngineList";
+import { SearchEngine } from "../interfaces/search-engine.interface";
 
 const useFormValidation = () => {
   const valid = ref(false);
@@ -14,17 +15,23 @@ const useFormValidation = () => {
     },
   ];
 
-  const nicknameRules = [
-    (value: string) => {
-      if(value) return true;
-      return t('$vuetify.optionsPage.searchEnginesSection.formRules.requiredNickname');
-    },
-    (value: string) => {
-      const searchEngineElement = searchEngineList.value.find(searchEngineParam => searchEngineParam.nickname == value);
-      if(searchEngineElement == undefined) return true;
-      return t('$vuetify.optionsPage.searchEnginesSection.formRules.validNickname');
-    }
-  ];
+  const getNicknameRules = (searchEngine: SearchEngine) => {
+    let nicknameRules = [
+      (value: string) => {
+        if(value) return true;
+        return t('$vuetify.optionsPage.searchEnginesSection.formRules.requiredNickname');
+      },
+      (value: string) => {
+        const searchEngineElement = searchEngineList.value.find(
+          searchEngineParam => (searchEngineParam.nickname == value) && (searchEngineParam.id != searchEngine.id)
+        );
+        if(searchEngineElement == undefined) return true;
+        return t('$vuetify.optionsPage.searchEnginesSection.formRules.validNickname');
+      }
+    ];
+
+    return nicknameRules;
+  }
 
   const urlRules = [
     (value: string) => {
@@ -49,7 +56,7 @@ const useFormValidation = () => {
   return {
     valid,
     nameRules,
-    nicknameRules,
+    getNicknameRules,
     urlRules,
   }
 }

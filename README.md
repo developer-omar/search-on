@@ -32,10 +32,11 @@ You can use the following commands:
 
 - `pnpm install` to install dependencies.
 - `pnpm dev`  to open a browser and install the extension in development mode.
+- `vite build` to build for production. If this command is not working use `node_modules/.bin/vite build`
 
 ## License
 
-Copyright (c) Omar Quispe
+Copyright (c) Omar Enrique
 
 This software is released under the terms of the GNU General Public License v3.0.
 See the LICENSE file for further information.
